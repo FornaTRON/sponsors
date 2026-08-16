@@ -18,7 +18,6 @@
       --background: #050a11;
       --background-secondary: #091321;
       --card: #0c1827;
-      --card-hover: #102238;
       --border: #193654;
 
       --blue: #238cff;
@@ -52,7 +51,7 @@
     }
 
     .page {
-      width: min(900px, calc(100% - 40px));
+      width: min(920px, calc(100% - 40px));
       margin: 0 auto;
       padding: 80px 0;
     }
@@ -73,14 +72,14 @@
     }
 
     h1 {
-      font-size: clamp(38px, 6vw, 64px);
+      font-size: clamp(40px, 6vw, 64px);
       line-height: 1.05;
       letter-spacing: -2px;
       margin-bottom: 20px;
     }
 
     .intro {
-      max-width: 650px;
+      max-width: 720px;
       margin: 0 auto;
       color: var(--text-secondary);
       font-size: 18px;
@@ -110,99 +109,126 @@
 
       border: 1px solid var(--border);
       border-radius: 16px;
-
-      padding: 32px;
-      margin-bottom: 18px;
-
-      transition:
-        border-color 0.2s ease,
-        transform 0.2s ease;
+      padding: 34px;
+      margin-bottom: 22px;
     }
 
-    .section:hover {
-      border-color: #2c5e8d;
-      transform: translateY(-2px);
-    }
-
-    .section-number {
+    .section-label {
       font-size: 12px;
       font-weight: 700;
       color: var(--blue-light);
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 7px;
+      margin-bottom: 8px;
     }
 
     h2 {
-      font-size: 22px;
-      margin-bottom: 10px;
+      font-size: 26px;
+      margin-bottom: 18px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: var(--text);
     }
 
     p {
       color: var(--text-secondary);
     }
 
-    strong {
-      color: var(--text);
+    .item {
+      padding: 22px 0;
+      border-top: 1px solid rgba(115, 187, 255, 0.12);
+    }
+
+    .item:first-of-type {
+      border-top: none;
+      padding-top: 4px;
+    }
+
+    .item p + p {
+      margin-top: 12px;
     }
 
     .contact {
       text-align: center;
-      margin-top: 55px;
-      padding: 40px;
+      margin-top: 50px;
+      padding: 42px 30px;
 
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      background: linear-gradient(
+        180deg,
+        rgba(16, 34, 56, 0.92),
+        rgba(9, 19, 33, 0.92)
+      );
+
+      border: 1px solid var(--border);
+      border-radius: 16px;
     }
 
     .contact h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
+      font-size: 30px;
+      margin-bottom: 12px;
     }
 
     .contact p {
-      max-width: 600px;
+      max-width: 670px;
       margin: 0 auto;
     }
 
-    .email {
+    .email-button {
       display: inline-block;
-      margin-top: 22px;
-      padding: 11px 20px;
+      margin-top: 26px;
+      padding: 13px 24px;
 
-      color: var(--text);
+      color: #ffffff;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
 
       border: 1px solid var(--blue);
-      border-radius: 8px;
+      border-radius: 9px;
 
-      background: rgba(35, 140, 255, 0.08);
+      background: rgba(35, 140, 255, 0.12);
 
       transition:
         background 0.2s ease,
-        box-shadow 0.2s ease;
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
     }
 
-    .email:hover {
-      background: rgba(35, 140, 255, 0.16);
+    .email-button:hover {
+      background: rgba(35, 140, 255, 0.22);
       box-shadow: 0 0 25px var(--blue-glow);
+      transform: translateY(-1px);
+    }
+
+    .email-address {
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--blue-light);
+    }
+
+    .signature {
+      margin-top: 28px;
+      color: var(--text);
+      font-weight: 600;
     }
 
     footer {
       text-align: center;
       color: var(--text-muted);
       font-size: 13px;
-      padding-top: 45px;
+      padding-top: 42px;
     }
 
     @media (max-width: 600px) {
       .page {
-        width: min(100% - 28px, 900px);
+        width: min(100% - 28px, 920px);
         padding: 55px 0;
       }
 
-      .section {
+      .section,
+      .contact {
         padding: 24px;
       }
 
@@ -217,7 +243,6 @@
   </style>
 </head>
 
-
 <body>
 
   <main class="page">
@@ -225,12 +250,13 @@
     <header>
       <div class="brand">FornaTRON</div>
 
-      <h1>Sponsorship Information</h1>
+      <h1>Sponsorship & Product Features</h1>
 
       <p class="intro">
-        Thank you for your interest in working with FornaTRON.
-        This page outlines my general policies regarding sponsorships,
-        product reviews, partnerships, and promotional content.
+        Thank you for your interest in having FornaTRON feature your product
+        or service on the FornaTRON YouTube channel.
+        Before reaching out, please take a moment to read the information
+        below so we can set the right expectations for a potential collaboration.
       </p>
 
       <div class="accent-line"></div>
@@ -238,116 +264,127 @@
 
 
     <section class="section">
-      <div class="section-number">01</div>
+      <div class="section-label">What I Can Offer</div>
 
-      <h2>Editorial Independence</h2>
+      <h2>Content Built Around Your Product</h2>
 
-      <p>
-        Accepting a sponsorship does not guarantee a positive review,
-        recommendation, or endorsement. All opinions expressed in my
-        videos remain my own.
-      </p>
+      <div class="item">
+        <h3>Dedicated Product or Service Reviews</h3>
+
+        <p>
+          I can create a dedicated video featuring your product or service,
+          including an in-depth look at its features, functionality, setup,
+          and how it may best fit the needs of my audience.
+        </p>
+      </div>
+
+      <div class="item">
+        <h3>How-To & Tutorial Videos</h3>
+
+        <p>
+          I specialize in creating straightforward, easy-to-follow tutorials.
+          I can create videos showing viewers how to set up, configure,
+          or use your product or service.
+        </p>
+
+        <p>
+          If agreed upon beforehand, this type of content may also be made
+          available for your company to feature on its website or social media channels.
+        </p>
+      </div>
     </section>
 
 
     <section class="section">
-      <div class="section-number">02</div>
+      <div class="section-label">What My Channel Is Not</div>
 
-      <h2>Sponsored Content Disclosure</h2>
+      <h2>Important Expectations</h2>
 
-      <p>
-        Sponsored or paid content will be clearly disclosed to my audience
-        in accordance with applicable advertising requirements and
-        YouTube's policies.
-      </p>
-    </section>
+      <div class="item">
+        <h3>My content is built for long-term discovery, not immediate viral reach.</h3>
 
+        <p>
+          Because the FornaTRON channel primarily focuses on "How To" content,
+          my videos tend to gain views over time as people discover a product
+          or service and search for help setting it up or using it.
+        </p>
 
-    <section class="section">
-      <div class="section-number">03</div>
+        <p>
+          Please do not depend on a FornaTRON video to generate a massive
+          number of views immediately after publication. My content is designed
+          to remain useful and discoverable over time.
+        </p>
+      </div>
 
-      <h2>Products & Review Samples</h2>
+      <div class="item">
+        <h3>I am not here to sell your product.</h3>
 
-      <p>
-        Products provided for review do not guarantee coverage unless
-        otherwise agreed upon in writing. Providing a product also does
-        not guarantee a positive review or recommendation.
-      </p>
-    </section>
+        <p>
+          My goal is to educate my audience and give my genuine opinion about
+          a product's functionality, features, and potential use cases.
+        </p>
 
+        <p>
+          I am not interested in affiliate commissions, promotional codes,
+          commission-based sales arrangements, or having the content's success
+          measured by the number of products sold.
+        </p>
+      </div>
 
-    <section class="section">
-      <div class="section-number">04</div>
+      <div class="item">
+        <h3>I only feature products and services that make sense for my audience.</h3>
 
-      <h2>Creative Control</h2>
+        <p>
+          My audience primarily consists of gamers, streamers, and content creators
+          looking for technology, products, and services that can improve their
+          gaming, streaming, or content-creation experience.
+        </p>
 
-      <p>
-        Unless specifically agreed upon beforehand, I retain final creative
-        and editorial control over all content published on the
-        FornaTRON channel.
-      </p>
-    </section>
+        <p>
+          This commonly includes creators producing content for platforms such
+          as YouTube, Twitch, Kick, TikTok, and similar platforms.
+        </p>
 
-
-    <section class="section">
-      <div class="section-number">05</div>
-
-      <h2>Claims & Talking Points</h2>
-
-      <p>
-        Sponsor-provided claims, statistics, information, or talking points
-        may be reviewed or edited before inclusion. I will not knowingly
-        present claims that I believe are misleading or inaccurate.
-      </p>
-    </section>
-
-
-    <section class="section">
-      <div class="section-number">06</div>
-
-      <h2>Content Usage Rights</h2>
-
-      <p>
-        Sponsorship does not automatically grant permission to reuse my
-        videos, likeness, voice, channel name, or other content in paid
-        advertisements or promotional materials. Additional usage rights
-        must be agreed upon separately.
-      </p>
-    </section>
-
-
-    <section class="section">
-      <div class="section-number">07</div>
-
-      <h2>Sponsorship Acceptance</h2>
-
-      <p>
-        I reserve the right to decline any sponsorship, partnership, or
-        promotional opportunity that I believe is not appropriate for my
-        channel, content, or audience.
-      </p>
+        <p>
+          Because of this, I only consider products and services that I believe
+          could genuinely provide value to the people watching my videos.
+        </p>
+      </div>
     </section>
 
 
     <section class="contact">
+      <div class="section-label">Get in Touch</div>
 
-      <h2>Interested in working together?</h2>
+      <h2>Interested in Working Together?</h2>
 
       <p>
-        For sponsorship, partnership, and business inquiries,
-        please use the business contact information associated
-        with the FornaTRON YouTube channel.
+        If everything above sounds like a good fit for you and your team,
+        I would love to hear from you.
       </p>
 
-      <!--
-      If you want to show your email directly,
-      replace the example below and remove these comment tags.
+      <p style="margin-top: 16px;">
+        When reaching out, please provide as much information as possible
+        about your company, product or service, what you would like featured,
+        and what you have in mind for the collaboration.
+      </p>
 
-      <a class="email" href="mailto:your@email.com">
-        your@email.com
+      <a class="email-button" href="mailto:fornatron@me.com">
+        Email FornaTRON
       </a>
-      -->
 
+      <div class="email-address">
+        fornatron@me.com
+      </div>
+
+      <p style="margin-top: 20px;">
+        I will do my best to review your inquiry and get back to you in a timely manner.
+      </p>
+
+      <div class="signature">
+        Thank you,<br>
+        Jimmy / FornaTRON
+      </div>
     </section>
 
 
