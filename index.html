@@ -1,11 +1,10 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>FornaTRON | Sponsorship Information</title>
+  <title>FornaTRON | Potential Sponsor Expectations</title>
 
   <style>
     * {
@@ -63,8 +62,8 @@
 
     .brand {
       display: inline-block;
-      font-size: 14px;
-      font-weight: 700;
+      font-size: 32px;
+      font-weight: 800;
       letter-spacing: 6px;
       text-transform: uppercase;
       color: var(--blue-light);
@@ -99,6 +98,107 @@
 
       box-shadow: 0 0 20px var(--blue-glow);
     }
+
+    /* YouTube Channel Profile */
+
+    .youtube-profile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+
+      margin: 42px auto 0;
+    }
+
+    .youtube-avatar {
+      width: 88px;
+      height: 88px;
+
+      border-radius: 50%;
+      object-fit: cover;
+
+      border: 2px solid var(--blue);
+
+      box-shadow:
+        0 0 25px var(--blue-glow);
+
+      display: none;
+    }
+
+    .youtube-info {
+      text-align: left;
+    }
+
+    .youtube-channel-name {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .youtube-label {
+      margin-top: 4px;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    /* YouTube Stats */
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+
+      margin-top: 30px;
+    }
+
+    .stat-card {
+      background: linear-gradient(
+        180deg,
+        rgba(16, 34, 56, 0.92),
+        rgba(9, 19, 33, 0.92)
+      );
+
+      border: 1px solid var(--border);
+      border-radius: 14px;
+
+      padding: 24px 18px;
+
+      text-align: center;
+
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-2px);
+      border-color: #2c5e8d;
+      box-shadow: 0 0 24px var(--blue-glow);
+    }
+
+    .stat-number {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--blue-light);
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      margin-top: 7px;
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    .stats-status {
+      text-align: center;
+      margin-top: 12px;
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    /* Main Sections */
 
     .section {
       background: linear-gradient(
@@ -150,6 +250,8 @@
     .item p + p {
       margin-top: 12px;
     }
+
+    /* Contact */
 
     .contact {
       text-align: center;
@@ -221,6 +323,8 @@
       padding-top: 42px;
     }
 
+    /* Mobile */
+
     @media (max-width: 600px) {
       .page {
         width: min(100% - 28px, 920px);
@@ -239,6 +343,23 @@
       h1 {
         letter-spacing: -1px;
       }
+
+      .brand {
+        font-size: 25px;
+        letter-spacing: 4px;
+      }
+
+      .youtube-profile {
+        flex-direction: column;
+      }
+
+      .youtube-info {
+        text-align: center;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -248,9 +369,14 @@
   <main class="page">
 
     <header>
-      <div class="brand">FornaTRON</div>
 
-      <h1>Potential Sponsor Expectations</h1>
+      <div class="brand">
+        FornaTRON
+      </div>
+
+      <h1>
+        Potential Sponsor Expectations
+      </h1>
 
       <p class="intro">
         Thank you for your interest in having FornaTRON feature your product
@@ -260,26 +386,131 @@
       </p>
 
       <div class="accent-line"></div>
+
+
+      <!-- YouTube Profile -->
+
+      <div class="youtube-profile">
+
+        <img
+          id="youtube-avatar"
+          class="youtube-avatar"
+          src=""
+          alt="FornaTRON YouTube Profile Picture"
+        >
+
+        <div class="youtube-info">
+
+          <div
+            class="youtube-channel-name"
+            id="youtube-channel-name"
+          >
+            FornaTRON
+          </div>
+
+          <div class="youtube-label">
+            YouTube Channel
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- YouTube Statistics -->
+
+      <div class="stats-grid">
+
+        <div class="stat-card">
+
+          <div
+            class="stat-number"
+            id="subscriber-count"
+          >
+            ...
+          </div>
+
+          <div class="stat-label">
+            Subscribers
+          </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+          <div
+            class="stat-number"
+            id="view-count"
+          >
+            ...
+          </div>
+
+          <div class="stat-label">
+            Channel Views
+          </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+          <div
+            class="stat-number"
+            id="video-count"
+          >
+            ...
+          </div>
+
+          <div class="stat-label">
+            Videos Published
+          </div>
+
+        </div>
+
+      </div>
+
+      <div
+        class="stats-status"
+        id="stats-status"
+      >
+        Loading current YouTube channel statistics...
+      </div>
+
     </header>
 
 
     <section class="section">
-      <div class="section-label">What I Can Offer</div>
 
-      <h2>Content Built Around Your Product</h2>
+      <div class="section-label">
+        What I Can Offer
+      </div>
+
+      <h2>
+        Content Built Around Your Product
+      </h2>
+
 
       <div class="item">
-        <h3>Dedicated Product or Service Reviews</h3>
+
+        <h3>
+          Dedicated Product or Service Reviews
+        </h3>
 
         <p>
           I can create a dedicated video featuring your product or service,
           including an in-depth look at its features, functionality, setup,
           and how it may best fit the needs of my audience.
         </p>
+
       </div>
 
+
       <div class="item">
-        <h3>How-To & Tutorial Videos</h3>
+
+        <h3>
+          How-To & Tutorial Videos
+        </h3>
 
         <p>
           I specialize in creating straightforward, easy-to-follow tutorials.
@@ -291,17 +522,28 @@
           If agreed upon beforehand, this type of content may also be made
           available for your company to feature on its website or social media channels.
         </p>
+
       </div>
+
     </section>
 
 
     <section class="section">
-      <div class="section-label">What My Channel Is Not</div>
 
-      <h2>Important Expectations</h2>
+      <div class="section-label">
+        What My Channel Is Not
+      </div>
+
+      <h2>
+        Important Expectations
+      </h2>
+
 
       <div class="item">
-        <h3>My content is built for long-term discovery, not immediate viral reach.</h3>
+
+        <h3>
+          My content is built for long-term discovery, not immediate viral reach.
+        </h3>
 
         <p>
           Because the FornaTRON channel primarily focuses on "How To" content,
@@ -314,10 +556,15 @@
           number of views immediately after publication. My content is designed
           to remain useful and discoverable over time.
         </p>
+
       </div>
 
+
       <div class="item">
-        <h3>I am not here to sell your product.</h3>
+
+        <h3>
+          I am not here to sell your product.
+        </h3>
 
         <p>
           My goal is to educate my audience and give my genuine opinion about
@@ -329,10 +576,15 @@
           commission-based sales arrangements, or having the content's success
           measured by the number of products sold.
         </p>
+
       </div>
 
+
       <div class="item">
-        <h3>I only feature products and services that make sense for my audience.</h3>
+
+        <h3>
+          I only feature products and services that make sense for my audience.
+        </h3>
 
         <p>
           My audience primarily consists of gamers, streamers, and content creators
@@ -349,14 +601,21 @@
           Because of this, I only consider products and services that I believe
           could genuinely provide value to the people watching my videos.
         </p>
+
       </div>
+
     </section>
 
 
     <section class="contact">
-      <div class="section-label">Get in Touch</div>
 
-      <h2>Interested in Working Together?</h2>
+      <div class="section-label">
+        Get in Touch
+      </div>
+
+      <h2>
+        Interested in Working Together?
+      </h2>
 
       <p>
         If everything above sounds like a good fit for you and your team,
@@ -369,7 +628,10 @@
         and what you have in mind for the collaboration.
       </p>
 
-      <a class="email-button" href="mailto:fornatron@me.com">
+      <a
+        class="email-button"
+        href="mailto:fornatron@me.com"
+      >
         Email FornaTRON
       </a>
 
@@ -385,6 +647,7 @@
         Thank you,<br>
         Jimmy / FornaTRON
       </div>
+
     </section>
 
 
@@ -394,6 +657,256 @@
 
   </main>
 
+
+  <script>
+
+    /*
+      ==================================================
+      YOUTUBE API SETTINGS
+      ==================================================
+
+      Replace the two values below with:
+
+      1. Your restricted YouTube Data API v3 API key
+      2. Your YouTube Channel ID
+
+      Keep the quotation marks.
+    */
+
+    const YOUTUBE_API_KEY = "AIzaSyBSUfjmg1ZhrzBOceerSVKN3t7Ln5x05gc";
+
+    const CHANNEL_ID = "UCUSQJBbGr0ZgwhJF0GshZ8g";
+
+
+    /*
+      ==================================================
+      LOAD YOUTUBE CHANNEL INFORMATION
+      ==================================================
+    */
+
+    async function loadYouTubeStats() {
+
+      const endpoint =
+        "https://www.googleapis.com/youtube/v3/channels" +
+        "?part=snippet,statistics" +
+        "&id=" + encodeURIComponent(CHANNEL_ID) +
+        "&key=" + encodeURIComponent(YOUTUBE_API_KEY);
+
+
+      try {
+
+        const response = await fetch(endpoint);
+
+
+        if (!response.ok) {
+
+          throw new Error(
+            "YouTube API returned HTTP " + response.status
+          );
+
+        }
+
+
+        const data = await response.json();
+
+
+        if (!data.items || data.items.length === 0) {
+
+          throw new Error(
+            "No YouTube channel was returned. Check your Channel ID."
+          );
+
+        }
+
+
+        const channel = data.items[0];
+
+        const snippet = channel.snippet;
+
+        const stats = channel.statistics;
+
+
+        /*
+          Channel Name
+        */
+
+        document.getElementById(
+          "youtube-channel-name"
+        ).textContent = snippet.title;
+
+
+        /*
+          Channel Profile Picture
+        */
+
+        const avatar =
+          document.getElementById("youtube-avatar");
+
+
+        const avatarURL =
+          snippet.thumbnails?.high?.url ||
+          snippet.thumbnails?.medium?.url ||
+          snippet.thumbnails?.default?.url;
+
+
+        if (avatarURL) {
+
+          avatar.src = avatarURL;
+
+          avatar.style.display = "block";
+
+        }
+
+
+        /*
+          Subscriber Count
+        */
+
+        if (stats.subscriberCount !== undefined) {
+
+          document.getElementById(
+            "subscriber-count"
+          ).textContent =
+            formatLargeNumber(stats.subscriberCount);
+
+        } else {
+
+          document.getElementById(
+            "subscriber-count"
+          ).textContent = "Hidden";
+
+        }
+
+
+        /*
+          Total Channel Views
+        */
+
+        document.getElementById(
+          "view-count"
+        ).textContent =
+          formatLargeNumber(stats.viewCount);
+
+
+        /*
+          Published Videos
+        */
+
+        document.getElementById(
+          "video-count"
+        ).textContent =
+          Number(stats.videoCount).toLocaleString();
+
+
+        /*
+          Remove Loading Message
+        */
+
+        document.getElementById(
+          "stats-status"
+        ).textContent =
+          "Current YouTube channel statistics";
+
+
+      } catch (error) {
+
+        console.error(
+          "Unable to load YouTube statistics:",
+          error
+        );
+
+
+        document.getElementById(
+          "subscriber-count"
+        ).textContent = "N/A";
+
+
+        document.getElementById(
+          "view-count"
+        ).textContent = "N/A";
+
+
+        document.getElementById(
+          "video-count"
+        ).textContent = "N/A";
+
+
+        document.getElementById(
+          "stats-status"
+        ).textContent =
+          "YouTube statistics are temporarily unavailable.";
+
+      }
+
+    }
+
+
+    /*
+      ==================================================
+      FORMAT LARGE NUMBERS
+      ==================================================
+
+      Examples:
+
+      1250       = 1.3K
+      125000     = 125K
+      1500000    = 1.5M
+      1200000000 = 1.2B
+    */
+
+    function formatLargeNumber(number) {
+
+      const value = Number(number);
+
+
+      if (value >= 1000000000) {
+
+        return (
+          (value / 1000000000)
+            .toFixed(1)
+            .replace(".0", "") +
+          "B"
+        );
+
+      }
+
+
+      if (value >= 1000000) {
+
+        return (
+          (value / 1000000)
+            .toFixed(1)
+            .replace(".0", "") +
+          "M"
+        );
+
+      }
+
+
+      if (value >= 1000) {
+
+        return (
+          (value / 1000)
+            .toFixed(1)
+            .replace(".0", "") +
+          "K"
+        );
+
+      }
+
+
+      return value.toLocaleString();
+
+    }
+
+
+    /*
+      Run when the page loads.
+    */
+
+    loadYouTubeStats();
+
+  </script>
+
 </body>
 </html>
-```
