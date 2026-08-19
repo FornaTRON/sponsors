@@ -322,7 +322,177 @@
 
       border: 0;
     }
+/* Brands */
 
+.brands-section {
+  margin-top: 50px;
+  margin-bottom: 22px;
+  padding: 42px 0;
+
+  text-align: center;
+
+  background: linear-gradient(
+    180deg,
+    rgba(16, 34, 56, 0.92),
+    rgba(9, 19, 33, 0.92)
+  );
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+
+  overflow: hidden;
+}
+
+.brands-section h2 {
+  margin-bottom: 8px;
+}
+
+.brands-intro {
+  max-width: 650px;
+  margin: 0 auto 32px;
+  padding: 0 24px;
+
+  color: var(--text-secondary);
+}
+
+/* Scrolling Logo Area */
+
+.logo-marquee {
+  position: relative;
+
+  width: 100%;
+  overflow: hidden;
+
+  padding: 20px 0;
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.logo-track {
+  display: flex;
+  align-items: center;
+
+  width: max-content;
+
+  animation: logo-scroll 24s linear infinite;
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 200px;
+  height: 100px;
+
+  margin: 0 22px;
+
+  flex-shrink: 0;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.logo-item:hover {
+  transform: scale(1.08);
+}
+
+/* Image Logos */
+
+.logo-item img {
+  display: block;
+
+  max-width: 170px;
+  max-height: 75px;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  opacity: 0.8;
+
+  filter: grayscale(100%);
+
+  transition:
+    opacity 0.2s ease,
+    filter 0.2s ease;
+}
+
+.logo-item:hover img {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+/* Text-Only Brands */
+
+.logo-text {
+  font-size: 25px;
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  color: var(--text);
+
+  opacity: 0.8;
+
+  white-space: nowrap;
+
+  transition:
+    opacity 0.2s ease,
+    color 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
+.logo-item:hover .logo-text {
+  opacity: 1;
+
+  color: var(--blue-light);
+
+  text-shadow:
+    0 0 20px var(--blue-glow);
+}
+
+/* Pause logos when hovered */
+
+.logo-marquee:hover .logo-track {
+  animation-play-state: paused;
+}
+
+/* Continuous scrolling animation */
+
+@keyframes logo-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-track {
+    animation: none;
+  }
+}
     /* Contact */
 
     .contact {
@@ -723,7 +893,111 @@
       </div>
 
     </section>
+<!-- Brands I've Worked With -->
 
+<section class="brands-section">
+
+  <div class="section-label">
+    Brands I've Worked With
+  </div>
+
+  <h2>
+    Previous & Current Partnerships
+  </h2>
+
+  <p class="brands-intro">
+    A selection of brands I have previously worked with or currently work with.
+  </p>
+
+
+  <div class="logo-marquee">
+
+    <div class="logo-track">
+
+
+      <!-- First Set -->
+
+      <div class="logo-item">
+        <img
+          src="images/elgato.png"
+          alt="Elgato"
+        >
+      </div>
+
+
+      <div class="logo-item">
+        <img
+          src="images/avermedia.png"
+          alt="AVerMedia"
+        >
+      </div>
+
+
+      <div class="logo-item">
+        <img
+          src="images/fifine.png"
+          alt="FIFINE"
+        >
+      </div>
+
+
+      <div class="logo-item">
+        <span class="logo-text">
+          YCCTEAM
+        </span>
+      </div>
+
+
+
+      <!--
+        Duplicate Set
+
+        These are intentionally duplicated so the
+        scrolling animation can loop continuously.
+      -->
+
+      <div class="logo-item">
+        <img
+          src="images/elgato.png"
+          alt=""
+          aria-hidden="true"
+        >
+      </div>
+
+
+      <div class="logo-item">
+        <img
+          src="images/avermedia.png"
+          alt=""
+          aria-hidden="true"
+        >
+      </div>
+
+
+      <div class="logo-item">
+        <img
+          src="images/fifine.png"
+          alt=""
+          aria-hidden="true"
+        >
+      </div>
+
+
+      <div class="logo-item">
+        <span
+          class="logo-text"
+          aria-hidden="true"
+        >
+          YCCTEAM
+        </span>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
 
     <section class="contact">
 
